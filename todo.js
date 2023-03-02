@@ -38,3 +38,26 @@ const populateTodos = () => {
     ol.appendChild(li);
     }
 }
+
+
+const filterTodosOldSchool = () => {
+    let filtered = []
+    for (let index = 0; index < arrayOfTodos.length; index++) {
+      const todo = arrayOfTodos[index];
+      let userId = 2
+      if (todo.userId === userId) {
+        filtered.push(todo)
+      }
+    }
+    console.log('filtered:', filtered)
+  }
+  const filterTodos = () => {
+    let filteredByUserId = arrayOfTodos.filter((todo) => {
+      let userId = 2
+      // return todo
+      if (todo.userId === userId && todo.completed) {
+        return todo
+      }
+    })
+    console.log('filteredByUserId:', filteredByUserId)
+  }
