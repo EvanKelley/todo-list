@@ -74,7 +74,7 @@ const populateTodos = () => {
       const todo = completedToDos[index];
       const li = document.createElement("li");
       const title = document.createTextNode(todo.title);
-      li.style.color = "green";
+      li.style.color = "#430A78";
       li.appendChild(title);
       ol.appendChild(li);
       }
@@ -88,7 +88,7 @@ const populateTodos = () => {
       const todo = completedToDos[index];
       const li = document.createElement("li");
       const title = document.createTextNode(todo.title);
-      li.style.color = "red";
+      li.style.color = "#E61717";
       li.appendChild(title);
       ol.appendChild(li);
       }
