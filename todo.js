@@ -39,25 +39,57 @@ const populateTodos = () => {
     }
 }
 
+  // let userId = document.getElementById("numberInput").value
+  // const filterTodos = () => {
+  //   console.log(userId)
+  //   let filteredByUserId = arrayOfTodos.filter((todo) => {
+  //     // return todo
+  //     if (todo.userId === userId && todo.completed) {
+  //       return todo
+  //     }
+  //   })
+  //   console.log('filteredByUserId:', filteredByUserId)
+  // }
 
-const filterTodosOldSchool = () => {
-    let filtered = []
-    for (let index = 0; index < arrayOfTodos.length; index++) {
-      const todo = arrayOfTodos[index];
-      let userId = 2
-      if (todo.userId === userId) {
-        filtered.push(todo)
-      }
-    }
-    console.log('filtered:', filtered)
-  }
+  // let userId = document.getElementById("numberInput").value
   const filterTodos = () => {
-    let filteredByUserId = arrayOfTodos.filter((todo) => {
-      let userId = 2
-      // return todo
-      if (todo.userId === userId && todo.completed) {
-        return todo
+    let userToDos = arrayOfTodos.filter(num => num.userId == document.getElementById('numberInput').value)
+    console.log(userToDos)
+    const ol = document.getElementById("todo-list");
+    ol.innerHTML = ""
+    for (let index = 0; index < userToDos.length; index++) {
+      const todo = userToDos[index];
+      const li = document.createElement("li");
+      const title = document.createTextNode(todo.title);
+      li.appendChild(title);
+      ol.appendChild(li);
       }
-    })
-    console.log('filteredByUserId:', filteredByUserId)
+  }
+
+  const showComplete = () => {
+    const ol = document.getElementById("todo-list");
+    ol.innerHTML = ""
+    let completedToDos = arrayOfTodos.filter(num => num.completed === true)
+    for (let index = 0; index < completedToDos.length; index++) {
+      const todo = completedToDos[index];
+      const li = document.createElement("li");
+      const title = document.createTextNode(todo.title);
+      li.style.color = "green";
+      li.appendChild(title);
+      ol.appendChild(li);
+      }
+  }
+
+  const showIncomplete = () => {
+    const ol = document.getElementById("todo-list");
+    ol.innerHTML = ""
+    let completedToDos = arrayOfTodos.filter(num => num.completed === false)
+    for (let index = 0; index < completedToDos.length; index++) {
+      const todo = completedToDos[index];
+      const li = document.createElement("li");
+      const title = document.createTextNode(todo.title);
+      li.style.color = "red";
+      li.appendChild(title);
+      ol.appendChild(li);
+      }
   }
