@@ -47,4 +47,5 @@ main{
   padding: 45px 0 25px 0;
   background-color: #430A78;
   border: 2px solid black;
+  border-radius: 25px;
 }
