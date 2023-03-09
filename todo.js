@@ -38,3 +38,58 @@ const populateTodos = () => {
     ol.appendChild(li);
     }
 }
+
+  // let userId = document.getElementById("numberInput").value
+  // const filterTodos = () => {
+  //   console.log(userId)
+  //   let filteredByUserId = arrayOfTodos.filter((todo) => {
+  //     // return todo
+  //     if (todo.userId === userId && todo.completed) {
+  //       return todo
+  //     }
+  //   })
+  //   console.log('filteredByUserId:', filteredByUserId)
+  // }
+
+  // let userId = document.getElementById("numberInput").value
+  const filterTodos = () => {
+    let userToDos = arrayOfTodos.filter(num => num.userId == document.getElementById('numberInput').value)
+    console.log(userToDos)
+    const ol = document.getElementById("todo-list");
+    ol.innerHTML = ""
+    for (let index = 0; index < userToDos.length; index++) {
+      const todo = userToDos[index];
+      const li = document.createElement("li");
+      const title = document.createTextNode(todo.title);
+      li.appendChild(title);
+      ol.appendChild(li);
+      }
+  }
+
+  const showComplete = () => {
+    const ol = document.getElementById("todo-list");
+    ol.innerHTML = ""
+    let completedToDos = arrayOfTodos.filter(num => num.completed === true)
+    for (let index = 0; index < completedToDos.length; index++) {
+      const todo = completedToDos[index];
+      const li = document.createElement("li");
+      const title = document.createTextNode(todo.title);
+      li.style.color = "#430A78";
+      li.appendChild(title);
+      ol.appendChild(li);
+      }
+  }
+
+  const showIncomplete = () => {
+    const ol = document.getElementById("todo-list");
+    ol.innerHTML = ""
+    let completedToDos = arrayOfTodos.filter(num => num.completed === false)
+    for (let index = 0; index < completedToDos.length; index++) {
+      const todo = completedToDos[index];
+      const li = document.createElement("li");
+      const title = document.createTextNode(todo.title);
+      li.style.color = "#E61717";
+      li.appendChild(title);
+      ol.appendChild(li);
+      }
+  }

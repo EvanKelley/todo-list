@@ -1,0 +1,51 @@
+body{
+  background-color: #DDB1B5;
+}
+
+main{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 20% 20% 20% 40%;
+  grid-template-areas: 
+                      ".... ...."
+                      "flp list"
+                      "comp list"
+                      "filt list"
+                      ;
+}
+
+.flp{
+  grid-area: "flp";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.completion{
+  grid-area: "comp";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filter{
+  grid-area: "filt";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list{
+  grid-area: "list";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #DDB1B5;
+}
+
+.inputs{
+  padding: 45px 0 25px 0;
+  background-color: #430A78;
+  border: 2px solid black;
+  border-radius: 25px;
+}
